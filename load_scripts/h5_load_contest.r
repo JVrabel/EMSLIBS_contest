@@ -6,7 +6,7 @@ library(rhdf5)
 # memory.limit(size=65536)
 
 # set number of spectra and path to the data files
-setwd("D:/data/EMSLIBS contest/data/")    # selecting the directory containing the data files
+setwd("f:/data/EMSLIBS_CONTEST/")    # selecting the directory containing the data files
 spectraCount <- 100   # selecting the number of spectra for each sample (maximum of 500), recommended 100
 
 ##########################################
@@ -50,7 +50,7 @@ h5closeAll()
 # Reduce number of spectra per sample
 ##########################################
 
-testData <- lapply(testData,reddim)
+
 testData <- as.data.frame(do.call('rbind',testData))
 
 ##########################################

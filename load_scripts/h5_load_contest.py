@@ -13,8 +13,8 @@ import h5py
 import numpy as np
 
 ## set number of spectra and path to the data files
-spectraCount = 50                           # selecting the number of spectra for each sample (maximum of 500)
-os.chdir("D:/data/EMSLIBS contest/data/")   # selecting the directory containing the data files
+os.chdir("f:/Data/EMSLIBS_CONTEST/")   # selecting the directory containing the data files
+spectraCount = 200                           # selecting the number of spectra for each sample (maximum of 500)
 
 ##########################################
 # Train Data
@@ -57,11 +57,13 @@ testFile = h5py.File("contest_TEST.h5",'r')     # testing data, unless the filen
 
 for sample in list(testFile["UNKNOWN"].keys()):
     tempData = testFile["UNKNOWN"][sample].value
-    tempData = tempData[:,0:spectraCount]
+   
     if "testData" not in locals():
         testData = tempData.transpose()
     else:
-        testData = np.append(testData, tempData.transpose(), axis = 0)
+       testData = np.append(testData, tempData.transpose(), axis = 0)
+
+
 # creates a two-dimensional array (matrix) containing the testing data
 # each row represents a single spectrum
 testFile.close()

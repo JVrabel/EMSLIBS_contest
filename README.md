@@ -15,10 +15,12 @@ using [pip](https://pypi.org/project/pip/) write into your command line:
 $ python3 -m pip install -r requirements.txt
 ```
 ---
+
 Download datasets (`train.h5` and `test.h5`) from
 this [link](https://www.nature.com/articles/s41597-020-0396-8).
 Save them into `datasets/` directory and rename them to `contest_TRAIN.h5`
 and `contest_TEST.h5`.
+
 ---
 Import the module into your python script using:
 ```python

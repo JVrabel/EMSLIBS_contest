@@ -34,13 +34,9 @@ def load_train_data(dir_path, spectra_count=100):
     train_data = []   
     with h5py.File(dir_path + "contest_TRAIN.h5", 'r') as train_file:
         for i_sample, sample in train_file["Spectra"].items():
-            if i_sample == "100":   # Progress report details (not important)
-                endline = '\n'
-            else:
-                endline = '\r'
-            print("-> sample: {}".format(i_sample), end=endline, flush=True)
+            print("\r-> sample: {}".format(i_sample), end='', flush=True)
             train_data.append(sample[:, :spectra_count].transpose())
-    print("-> combining samples into final matrix ... ", end="", flush=True)
+    print("\n-> combining samples into final matrix ... ", end="", flush=True)
     train_data = np.concatenate(train_data)
     print("done [shape: {}]".format(train_data.shape))
     return train_data
